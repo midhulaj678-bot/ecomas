@@ -5,9 +5,6 @@ const Header = () => {
     <div>
         <header>
             <img src="/" alt="" />
-
-
-            
         </header>
     </div>
   )
