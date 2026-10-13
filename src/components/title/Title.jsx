@@ -23,14 +23,17 @@ const Title = () => {
 </div>
  <div className='px-9'>
             <h1 className='font-bold pt-5 text-2xl pb-2'>Double Row Earrings <br /></h1>
-            <h6>Antique Luxury</h6>
+            <h6 className='pb-6'>Antique Luxury</h6>
         </div>
         <div className='   text-black bg-white hover:to-black border w-40 py-6 flex relative justify-center pl-3 px-1 pt-1   '>
             <button className='px-6 h-2 items-center justify-center '>Shop Now &rarr;</button>
+
         </div>
+              
         </div>
        
     </div>
+    
   )
 }
 
