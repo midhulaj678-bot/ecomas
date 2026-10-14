@@ -15,6 +15,7 @@ const images = [
 export default function ImageSlider() {
   const [current, setCurrent] = useState(0);
 
+  // Automatic movement
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
@@ -23,40 +24,69 @@ export default function ImageSlider() {
     return () => clearInterval(timer);
   }, []);
 
+  const previousImage = () => {
+    setCurrent((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  const nextImage = () => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  };
+
   return (
-    <div className="relative mx-auto w-full overflow-hidden py-4 pt-18">
+    <div
+      className="relative mx-auto w-full overflow-hidden
+                 bg-white px-10 py-4
+                 sm:px-14 sm:py-5
+                 md:px-16 md:py-6
+                 lg:px-20"
+    >
+      {/* Slider */}
       <div
         className="flex transition-transform duration-700 ease-in-out"
-        style={{ transform: `translateX(-${current * 100}%)` }}
+        style={{
+          transform: `translateX(-${current * 100}%)`,
+        }}
       >
         {images.map((image, index) => (
           <div
-            key={index}
-            className="flex w-full shrink-0 items-center justify-center px-2"
+            key={image}
+            className="flex w-full shrink-0 items-center justify-center"
           >
             <img
               src={image}
               alt={`Brand ${index + 1}`}
-              className="h-24 w-full object-contain sm:h-32 lg:h-40"
+              className="h-12 w-28 object-contain
+                         sm:h-14 sm:w-32
+                         md:h-16 md:w-36
+                         lg:h-20 lg:w-40"
+              onError={() => {
+                console.error("Image not found:", image);
+              }}
             />
           </div>
         ))}
       </div>
 
+      {/* Previous Button */}
       <button
-        onClick={() =>
-          setCurrent((prev) => (prev - 1 + images.length) % images.length)
-        }
-        className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white px-3 py-1 text-xl shadow"
+        onClick={previousImage}
+        aria-label="Previous logo"
+        className="absolute left-2 top-1/2 -translate-y-1/2
+                   rounded-full bg-white p-2 text-xl text-black
+                   shadow-md transition hover:bg-[#c17b45]
+                   hover:text-white sm:left-4"
       >
         &#8592;
       </button>
 
+      {/* Next Button */}
       <button
-        onClick={() =>
-          setCurrent((prev) => (prev + 1) % images.length)
-        }
-        className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white px-3 py-1 text-xl shadow"
+        onClick={nextImage}
+        aria-label="Next logo"
+        className="absolute right-2 top-1/2 -translate-y-1/2
+                   rounded-full bg-white p-2 text-xl text-black
+                   shadow-md transition hover:bg-[#c17b45]
+                   hover:text-white sm:right-4"
       >
         &#8594;
       </button>

@@ -1,39 +1,104 @@
+
 import React from 'react'
 
 const Title = () => {
   return (
-    <div>
-        <div className='bg-[#4B2E1F] text-white  font-sans '>
-            <img src="/title/festivel.jpg" alt="festivel" className=''/>
-            <h1 className='text-yellow-800 px-8 pt-8 text-2x1'>Festive Sale Offers <br />
-            </h1>
-            <h1 className='px-8 font-bold text-3xl pt-2'>Handmade <br/>Jewellery For <br /> Special <br />Occasions</h1>
-            <p className='px-8 pt-4 pb-6'>Aliqute eget  sit  amet tellus cras <br />adipcing enim, Non quam <br /> locus suspetias facibus <br />interdum prosuture.Loberrids Mattis <br />aliquam fausibus puras in massa <br />tempor nec.</p>
-            
-<div className="relative flex items-center px-9">
-  {/* Discount badge */}
-  <div className="flex h-[100px] w-[100px] flex-col items-center justify-center rounded-full bg-[#393939] text-white ">
-    <span className="text-2xl font-medium">17%</span>
-    <span className="text-2xl font-medium">Offer</span>
-  </div>
+    <section className="bg-[#4B2E1F] text-white font-sans
+                        grid grid-cols-1 overflow-hidden
+                        sm:grid-cols-2">
 
-  {/* Horizontal line */}
-  <div className="ml-4 h-px w-8 bg-[#B9824B]"></div>
-   
-</div>
- <div className='px-9'>
-            <h1 className='font-bold pt-5 text-2xl pb-2'>Double Row Earrings <br /></h1>
-            <h6 className='pb-6'>Antique Luxury</h6>
-        </div>
-        <div className='   text-black bg-white hover:to-black border w-40 py-6 flex relative justify-center pl-3 px-1 pt-1   '>
-            <button className='px-6 h-2 items-center justify-center '>Shop Now &rarr;</button>
+      {/* Festive Image */}
+      <div className="w-full">
+        <img
+          src="/title/festivel.jpg"
+          alt="Festive jewellery collection"
+          className="w-full h-64 object-cover
+                     sm:h-full sm:min-h-[500px]
+                     md:min-h-[600px]
+                     lg:min-h-[650px]"
+        />
+      </div>
 
+      {/* Text Content */}
+      <div className="px-6 py-8
+                      sm:px-6 sm:py-10
+                      md:px-8 md:py-12
+                      lg:px-12 lg:py-16">
+
+        <h2 className="text-[#B9824B] text-xl
+                       sm:text-2xl
+                       md:text-3xl">
+          Festive Sale Offers
+        </h2>
+
+        <h1 className="pt-3 font-bold text-3xl leading-tight
+                       sm:text-3xl
+                       md:text-4xl
+                       lg:text-5xl">
+          Handmade <br />
+          Jewellery For <br />
+          Special <br className="hidden lg:block" />
+          Occasions
+        </h1>
+
+        <p className="pt-4 pb-6 text-sm leading-6 text-gray-200
+                      sm:text-sm
+                      md:text-base md:leading-7">
+          Aliquet eget sit amet tellus cras adipiscing enim.
+          Non quam lacus suspendisse faucibus interdum posuere.
+          Lobortis mattis aliquam faucibus purus in massa tempor.
+        </p>
+
+        {/* Discount Badge */}
+        <div className="flex items-center">
+          <div className="flex h-20 w-20 flex-col items-center
+                          justify-center rounded-full bg-[#393939]
+                          text-white
+                          sm:h-24 sm:w-24
+                          md:h-28 md:w-28">
+
+            <span className="text-xl font-medium sm:text-2xl">
+              17%
+            </span>
+
+            <span className="text-lg font-medium sm:text-xl">
+              Offer
+            </span>
+          </div>
+
+          <div className="ml-4 h-px w-10 bg-[#B9824B]
+                          sm:w-14 md:w-20" />
         </div>
-              
+
+        {/* Product Details */}
+        <div className="pt-5">
+          <h2 className="pb-2 text-xl font-bold
+                         sm:text-2xl
+                         md:text-3xl">
+            Double Row Earrings
+          </h2>
+
+          <p className="pb-6 text-sm text-gray-300 sm:text-base">
+            Antique Luxury
+          </p>
         </div>
-       
-    </div>
-    
+
+        {/* Shop Button */}
+        <button
+          className="inline-flex items-center justify-center gap-3
+                     border border-white bg-white px-6 py-3
+                     text-sm font-semibold text-black
+                     transition-colors duration-300
+                     hover:border-[#B9824B]
+                     hover:bg-[#B9824B] hover:text-white
+                     sm:px-8 sm:py-3
+                     md:text-base"
+        >
+          Shop Now <span aria-hidden="true">→</span>
+        </button>
+
+      </div>
+    </section>
   )
 }
 

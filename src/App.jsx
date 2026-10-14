@@ -7,6 +7,7 @@ import Logo from './components/logos/Logo'
 import ImageSlider from './components/trendingproducts/ImageSlider'
 import Latestnews from './components/latestarticle/Latestnews'
 import Slide from './components/slide/Slide'
+import Theend from './components/theend/Theend'
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
       <Logo />
       <Latestnews/>
       <Slide/>
+      <Theend/>
     </div>
   )
 }
